@@ -1,12 +1,11 @@
 from django.db import models
 
 class Animal(models.Model):
-    name = models.CharField(max_length=20, unique=True)
-    age = models.IntegerField()
+    
+    name = models.CharField(max_length=50)
+    age = models.FloatField()
     weight = models.FloatField()
-    
-    group = models.ForeignKey(
-        to="groups.Group", on_delete=models.CASCADE, related_name="animals"
-    )
-    
-    characteristics = models.ManyToManyField(to="characteristics.Characteristic")
+    sex = models.CharField(max_length=15)
+
+    group = models.ForeignKey("groups.Group", on_delete=models.CASCADE, related_name="animals")
+    characteristics = models.ManyToManyField("characteristics.Characteristic", related_name="animals")

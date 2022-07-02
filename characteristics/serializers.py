@@ -1,6 +1,5 @@
-from rest_framework import serializers, status
+from rest_framework import serializers
 
-from characteristics.models import Characteristic
 
 class CharacteristicSerializer(serializers.Serializer):
     

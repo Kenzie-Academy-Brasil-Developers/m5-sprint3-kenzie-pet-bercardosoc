@@ -1,8 +1,7 @@
-from rest_framework import serializers, status
+from rest_framework import serializers
 
-from groups.models import Group
 
-class GroupsSerializer(serializers.Serializer):
+class GroupSerializer(serializers.Serializer):
 
     id = serializers.IntegerField(read_only=True)
     name = serializers.CharField()
